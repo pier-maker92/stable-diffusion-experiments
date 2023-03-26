@@ -23,7 +23,7 @@ https://huggingface.co/spaces/sd-concepts-library/stable-diffusion-conceptualize
 
 #### Usage
 
-```python
+```bash
   --model_id MODEL_ID   The s.d. model checpoint you want to use
   --from_file, --no-from_file
                         load arguments from file
