@@ -14,8 +14,6 @@ Clone the repo, then create a conda envirnoment from `envirnoment.yml` and insta
 ```
 
 ## Textual inversion
-![Demo Animation](../repo_gif/0.gif?raw=true)
-
 The textual inversion experiment creates a video of 20 frames out of the generation of two images that starts from different concepts provided by the user.
 
 It is possible to load concepts giving a valid Huggin Face 🤗 concept repo:
