@@ -54,8 +54,9 @@ https://huggingface.co/spaces/sd-concepts-library/stable-diffusion-conceptualize
 ```python
 python textual_inversion.py --from_file -p "prompt_close_up.txt" --mps --num_inference_steps 50
 ```
-
-
+```python
+python textual_inversion.py --from_concept_repo "sd-concepts-library/gta5-artwork" --to_concept_repo "sd-concepts-library/low-poly-hd-logos-icons" --from_prompt "A man planting a seed in the <concept> style" --to_prompt "A <concept> of a beautiful tree" --mps --num_inference_steps 60 -s 0
+```
 ## img -> caption -> img
 
 This is more an evaluation across different models to perform image-to-text, providing caption to use as s.d. prompt for recreate the original image. 
