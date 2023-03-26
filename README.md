@@ -71,3 +71,6 @@ And then there is a comparison with a image2prompt model, the `CLIP-Interrogator
 ```python
 pharma/CLIP-Interrogator
 ```
+
+![ref](https://github.com/pier-maker92/stable-diffusion-experiments/blob/main/ref.png)
+![collection](https://github.com/pier-maker92/stable-diffusion-experiments/blob/main/gen_collection.png)
