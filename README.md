@@ -14,7 +14,7 @@ Clone the repo, then create a conda envirnoment from `envirnoment.yml` and insta
 ```
 
 ## Textual inversion
-![video-gif](https://github.com/pier-maker92/stable-diffusion-experiments/blob/main/0.gif) ![video-gif](https://github.com/pier-maker92/stable-diffusion-experiments/blob/main/1.gif)
+![video-gif](https://github.com/pier-maker92/stable-diffusion-experiments/blob/main/videos.gif)
 
 The textual inversion experiment creates a video of 20 frames out of the generation of two images that starts from different concepts provided by the user.
 
