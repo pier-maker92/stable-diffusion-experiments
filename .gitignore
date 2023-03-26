@@ -1,0 +1,7 @@
+.*
+!/.gitignore
+_*
+__pycache__
+/cache
+/frames
+/downloaded_embedding

@@ -1,0 +1,10 @@
+diffusers==0.11.1 
+transformers 
+ftfy 
+matplotlib
+seaborn
+accelerate
+huggingface_hub
+open-clip-torch
+clip_interrogator
+git+https://github.com/openai/CLIP.git

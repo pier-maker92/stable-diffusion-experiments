@@ -1,0 +1,4 @@
+--from_concept_repo sd-concepts-library/line-art
+--to_concept_repo sd-concepts-library/low-poly-hd-logos-icons
+--from_prompt A man planting a seed in the <concept> style
+--to_prompt A <concept> of a beautiful tree
