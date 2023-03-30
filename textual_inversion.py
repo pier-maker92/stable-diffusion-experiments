@@ -3,8 +3,8 @@ import sys
 import torch
 import shutil
 import argparse
-from Generator import Generator
-from Conceptualizer import Conceptualizer
+from modules.Generator import Generator
+from modules.Conceptualizer import Conceptualizer
 
 # Create the parser and add arguments
 parser = argparse.ArgumentParser()
@@ -37,6 +37,8 @@ parser.add_argument('--use_negative_prompt', action=argparse.BooleanOptionalActi
 parser.add_argument('-b','--batch_size', default=1, type=int,
                     help="Batch size to use")
 parser.add_argument('--mps', action=argparse.BooleanOptionalAction)
+parser.add_argument('-i','--interpolation', default='semantic', choices=['semantic','visual'], type=int,
+                    help="Choose the type of the interpolation. Options: semantic | visual. Default = semantic")
 
 if __name__=='__main__':
     # get args
@@ -85,6 +87,7 @@ if __name__=='__main__':
 
     # load generator
     generator = Generator(model_id, device, hparams, tokenizer, text_encoder, seed=seed)
+    # get prompt
     start_prompt = from_prompt.replace('<concept>',concepts['placeholders']['from'])
     end_prompt = to_prompt.replace('<concept>',concepts['placeholders']['to'])
     latents_list = []

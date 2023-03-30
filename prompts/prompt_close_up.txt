@@ -1,0 +1,4 @@
+--from_concept_repo sd-concepts-library/gta5-artwork
+--to_concept_repo sd-concepts-library/moebius
+--from_prompt A photo of a flying eagle at the sunset in the <concept> style, octane render, 4k, trend on artstation, cinematic ligths
+--to_prompt A photo of a flying eagle at night in the style of <concept>, unreal engine

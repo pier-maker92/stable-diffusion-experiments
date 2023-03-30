@@ -1,4 +1,0 @@
---from_concept_repo sd-concepts-library/m-geo
---to_concept_repo sd-concepts-library/madhubani-art
---from_prompt A painting showing <concept> exposed at the Louvre Museum 
---to_prompt A painting showing <concept> exposed at the Louvre Museum 

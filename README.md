@@ -14,7 +14,7 @@ Clone the repo, then create a conda envirnoment from `envirnoment.yml` and insta
 ```
 
 ## Textual inversion
-![video-gif](https://github.com/pier-maker92/stable-diffusion-experiments/blob/main/last.gif)
+![video-gif](https://github.com/pier-maker92/stable-diffusion-experiments/assets/blob/main/last.gif)
 
 The textual inversion experiment creates a video of 20 frames out of the generation of two images that starts from different concepts provided by the user.
 
@@ -73,4 +73,4 @@ And then there is a comparison with a image2prompt model, the `CLIP-Interrogator
 pharma/CLIP-Interrogator
 ```
 
-![caption_task](https://github.com/pier-maker92/stable-diffusion-experiments/blob/main/caption_task.png)
+![caption_task](https://github.com/pier-maker92/stable-diffusion-experiments/assets/blob/main/caption_task.png)

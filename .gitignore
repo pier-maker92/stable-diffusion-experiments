@@ -4,4 +4,4 @@ _*
 __pycache__
 /cache
 /frames
-/downloaded_embedding
+modules/downloaded_embedding
