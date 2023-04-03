@@ -5,3 +5,6 @@ __pycache__
 /cache
 /frames
 modules/downloaded_embedding
+modules/downloaded_embedding
+downloaded_embedding/
+sd-concept-output/

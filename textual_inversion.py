@@ -36,8 +36,9 @@ parser.add_argument('--use_negative_prompt', action=argparse.BooleanOptionalActi
                     help="flag to use negative prompt stored in negative_prompt.txt")
 parser.add_argument('-b','--batch_size', default=1, type=int,
                     help="Batch size to use")
-parser.add_argument('--mps', action=argparse.BooleanOptionalAction)
-parser.add_argument('-i','--interpolation', default='semantic', choices=['semantic','visual'], type=int,
+parser.add_argument('--mps', action=argparse.BooleanOptionalAction,
+                    help="Flag that set mps as gpu device")
+parser.add_argument('-i','--interpolation', default='semantic', choices=['semantic','visual'], type=str,
                     help="Choose the type of the interpolation. Options: semantic | visual. Default = semantic")
 
 if __name__=='__main__':

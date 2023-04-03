@@ -1,7 +1,9 @@
 import os
 import shutil
 import torch
+from .Generator import Generator
 from typing import Optional, Dict
+from torch.utils.data import DataLoader
 from huggingface_hub import hf_hub_download
 from transformers import CLIPTextModel, CLIPTokenizer
 
@@ -15,8 +17,33 @@ class Conceptualizer():
         self.tokenizer = CLIPTokenizer.from_pretrained(model_id, subfolder="tokenizer")
         # text encoder
         self.text_encoder = CLIPTextModel.from_pretrained(model_id, subfolder="text_encoder").to(device)
+    
+    def get_tokenizer(self):
+        return self.tokenizer, self.text_encoder
+    
+    def learn_concept(self, placeholder_token:str, initializer_token:str):
+        num_added_tokens = self.tokenizer.add_tokens(placeholder_token)
+        if num_added_tokens == 0:
+            raise ValueError(
+                f"The tokenizer already contains the token {placeholder_token}. Please pass a different"
+                " `placeholder_token` that is not already in the tokenizer."
+            )
+        token_ids = self.tokenizer.encode(initializer_token, add_special_tokens=False)
+        # Check if initializer_token is a single token or a sequence of tokens
+        if len(token_ids) > 1:
+            raise ValueError("The initializer token must be a single token.")
+        
+        initializer_token_id = token_ids[0]
+        placeholder_token_id = self.tokenizer.convert_tokens_to_ids(placeholder_token)
+        
+        self.text_encoder.resize_token_embeddings(len(self.tokenizer))
+        
+        token_embeds = self.text_encoder.get_input_embeddings().weight.data
+        token_embeds[placeholder_token_id] = token_embeds[initializer_token_id]
+        
+        return placeholder_token_id, self.tokenizer, self.text_encoder
 
-    def load_learned_embed_in_clip(self, learned_embeds_path, token=None):
+    def load_learned_embed_in_clip(self, learned_embeds_path:str, token=None):
         loaded_learned_embeds = torch.load(learned_embeds_path, map_location="cpu") 
 
         # separate token and the embeds
@@ -53,4 +80,4 @@ class Conceptualizer():
             # load concept embeddins in clip
             learned_embeds_path = f"{self.downloaded_embedding_folder}/learned_embeds.bin"
             self.load_learned_embed_in_clip(learned_embeds_path)
-        return self.tokenizer, self.text_encoder
+        return self.get_tokenizer()
